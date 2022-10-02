@@ -96,7 +96,8 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return tbl1.sort_values("_c4")["_c4"].str.upper().unique()
+   
+    return list(tbl1.sort_values("_c4")["_c4"].str.upper().unique())
 
 
 def pregunta_07():
@@ -172,7 +173,7 @@ def pregunta_10():
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
     return
-print(pregunta_10())
+print(pregunta_06())
 
 def pregunta_11():
     """
