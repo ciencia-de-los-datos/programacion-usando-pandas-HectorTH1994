@@ -224,7 +224,9 @@ def pregunta_11():
             },
             index=pd.Series(resultado.keys(), name="_c0"),
         )
-    return ddf
+    df=pd.DataFrame(list(resultado.items()),
+                   columns=['_c0', '_c4'])
+    return df
 print(pregunta_11())
 
 def pregunta_12():
