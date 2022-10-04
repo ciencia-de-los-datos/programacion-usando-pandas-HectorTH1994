@@ -257,7 +257,7 @@ def pregunta_12():
                    
     return df
     
-print(pregunta_12())
+
 
 
 def pregunta_13():
@@ -274,4 +274,12 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    #se unen las tablas
+    xx=pd.merge(
+        tbl0,
+        tbl2,
+        on="_c0"
+    )
+    #Se agrupa
+    xxx=xx.groupby("_c1")["_c5b"].sum()
+    return xxx
