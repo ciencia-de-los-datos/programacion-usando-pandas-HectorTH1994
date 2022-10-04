@@ -181,7 +181,6 @@ def pregunta_10():
         resultado[str(i)]=":".join(map(str, sorted(tbl0[tbl0["_c1"]==i]["_c2"])))
 
     #Con esto se transforma de diccionario a dataframe
-    df= pd.DataFrame(list(resultado.items()),columns=['_c0', '_c1'])
 
     ddf=pd.DataFrame(
             {
@@ -192,7 +191,6 @@ def pregunta_10():
     return ddf
 
 
-print(pregunta_10())
 
 def pregunta_11():
     """
@@ -210,8 +208,24 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    #tenemos los valores unicos
+    xx = sorted(tbl1["_c0"].unique())
+    resultado={}
+    #usamos un filtro para cada uno de los datos anteriores y agrupamos en diccionario
+    #La funcion map nos aplica la funcion str a cada elemento del filtro
+    for i in xx:
+        resultado[str(i)]=",".join(map(str, sorted(tbl1[tbl1["_c0"]==i]["_c4"])))
 
+    #Con esto se transforma de diccionario a dataframe
+
+    ddf=pd.DataFrame(
+            {
+                "_c4": resultado.values()
+            },
+            index=pd.Series(resultado.keys(), name="_c0"),
+        )
+    return ddf
+print(pregunta_11())
 
 def pregunta_12():
     """
