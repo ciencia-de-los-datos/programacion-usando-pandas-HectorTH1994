@@ -182,6 +182,13 @@ def pregunta_10():
 
     #Con esto se transforma de diccionario a dataframe
     df= pd.DataFrame(list(resultado.items()),columns=['_c0', '_c1'])
+
+    ddf=pd.DataFrame(
+            {
+                "_c2": resultado.values()
+            },
+            index=pd.Series(resultado.keys(), name="_c1"),
+        )
     return df
 
 
