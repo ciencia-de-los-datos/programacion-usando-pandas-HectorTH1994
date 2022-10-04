@@ -181,14 +181,8 @@ def pregunta_10():
         resultado[str(i)]=":".join(map(str, sorted(tbl0[tbl0["_c1"]==i]["_c2"])))
 
     #Con esto se transforma de diccionario a dataframe
-    df= pd.DataFrame(list(resultado.items()),columns=['_c0', '_c1'])
+    df= pd.DataFrame(list(resultado.items()),columns=['_c0', '_c2'])
 
-    ddf=pd.DataFrame(
-            {
-                "_c2": resultado.values()
-            },
-            index=pd.Series(resultado.keys(), name="_c1"),
-        )
     return df
 
 
